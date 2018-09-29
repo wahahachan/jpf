@@ -11,8 +11,9 @@ std::string jsnprintf(int n, const char *fmt, ...) {
 	va_list arg;
 	va_start(arg, fmt);
 	std::string result(n, '\0');
-	vsnprintf(const_cast<char *>(result.c_str()), n, fmt, arg);
+	int used = vsnprintf(const_cast<char *>(result.c_str()), n, fmt, arg);
 	va_end(arg);
+	result.erase(used).shrink_to_fit(); 
 	return result;
 }
 
