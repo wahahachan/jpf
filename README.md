@@ -1,4 +1,4 @@
-# Just a printf wrapper
+# Creates std::string with printf style formatting
 
 ## Features
 Provides an extension to use `snprintf()` on `std::string`
@@ -48,7 +48,7 @@ memset(sBuffer, 0, sizeof(char)*100);
 snprintf(sBuffer, 100, "Hello World");
 ```
 In the above example, the `snprintf(...)` call is safe only when the length variable `n` is input correctly (100 in this case).
-Such implementation relys on the programer to code *smartly*, which contradict to nowadays' C++ style.
+Such implementation relys on programmers to code *smartly*, which contradict to nowadays' C++ style.
 ```C++
 string sBuffer = "Hello" + "W" + "orld";
 ```
@@ -70,3 +70,42 @@ std::string S = jpf::jsnprintf(100, "Happy %dth anniversary!", 30);
 printf("S length: %lu, capacity: %lu\n", S.length(), S.capacity());
 // >> S length: 23, capacity: 23
 ```
+
+## Speed test
+We have tested our library against libc `snprintf` and {fmt}. A string is produced from the following input:
+
+`"My %llu-yo brithday party will be held on %4u/%02u/%02u %02u:%02u:%02u.%03u"`
+
+which produces the output
+
+`My 40-yo brithday party will be held on 2018/03/31 20:01:01.026`
+
+The process is repeated 5,000,000 times with a simple for-loop compiled with g++ 4.9.2 with flag `-O1 -DNDEBUG` on Ubuntu 16.04 virtual machine equipped with a `i5-3470` CPU.
+
+| API | Elapsed time |   |
+|----|-----|----|
+| snprintf | 1.927 s | 100%  |
+| jpf::jsnprintf | 2.511 s | 130%  |
+| fmt:sprintf | 3.020 s | 156%  |
+
+## Summary
+
+✓ Create std::string with your beloved printf formatting style
+
+✓ Protability and ease of use: just include header files and you are good to go
+
+✓ Low dependence: depends only on `cstdarg`, `cstdio` & `string` which are included as standard in modern C++
+
+✓ Lightning fast: give low performance hit even compared with standard snprintf
+
+☓ Argument positioning: we suggest to find alternatives if you are working on multilingual support
+
+☓ Custom type: you have to write your own ostream operator
+
+X Fail safe mechanism: we **do not** provides exception throw nor compile time argument checking nor string length auto-correction
+
+## License
+jpf is distributed udner the [MIT license](https://opensource.org/licenses/mit-license.php).
+
+## Acknowledgments
+The jpf library is written and maintained by Joe Chan.
