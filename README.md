@@ -90,22 +90,22 @@ The process is repeated 5,000,000 times with a simple for-loop compiled with g++
 
 ## Summary
 
-✓ 100% Compatibility: create std::string with your beloved printf formatting style
+✓ 100% Compatibility: creates std::string with your beloved printf formatting style
 
 ✓ Protability and ease of use: just include header files and you are good to go
 
 ✓ Low dependence: depends only on `cstdarg`, `cstdio` & `string` which are included as standard in modern C++
 
-✓ Lightning fast: give low performance hit even compared with standard snprintf
+✓ Lightning fast: gives low performance hit even compared with standard snprintf
 
 ☓ Argument positioning: we suggest to find alternatives if you are working on multilingual support
 
 ☓ Custom type: you have to write your own ostream operator
 
-X Fail safe mechanism: we **do not** provides exception throw nor compile time argument checking nor string length auto-correction
+☓ Fail safe mechanism: we **do not** provides exception throw nor compile time argument checking nor string length auto-correction
 
 ## License
-Thejpf library is distributed under the [MIT license](https://opensource.org/licenses/mit-license.php).
+The jpf library is distributed under the [MIT license](https://opensource.org/licenses/mit-license.php).
 
 ## Acknowledgments
 The jpf library is written and maintained by Joe Chan.
