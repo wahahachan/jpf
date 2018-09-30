@@ -90,7 +90,7 @@ The process is repeated 5,000,000 times with a simple for-loop compiled with g++
 
 ## Summary
 
-✓ Create std::string with your beloved printf formatting style
+✓ 100% Compatibility: create std::string with your beloved printf formatting style
 
 ✓ Protability and ease of use: just include header files and you are good to go
 
@@ -105,7 +105,7 @@ The process is repeated 5,000,000 times with a simple for-loop compiled with g++
 X Fail safe mechanism: we **do not** provides exception throw nor compile time argument checking nor string length auto-correction
 
 ## License
-jpf is distributed udner the [MIT license](https://opensource.org/licenses/mit-license.php).
+Thejpf library is distributed under the [MIT license](https://opensource.org/licenses/mit-license.php).
 
 ## Acknowledgments
 The jpf library is written and maintained by Joe Chan.
