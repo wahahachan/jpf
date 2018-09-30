@@ -60,7 +60,7 @@ Programmers have to take note of the content being print and give an estimated l
 ```C++
 int steps = 20;
 cout << jpf::jsnprintf(80, "Counter: %d\n", steps);   // (1) >> Counter: 20
-cout << jpf::jsnprintf(5, "Counter: %d\n", steps);    // (2) Not a logical statement, gives unkown result
+cout << jpf::jsnprintf(5, "Counter: %d\n", steps);    // (2) Not a logical statement, gives unknown result
 ```
 In the above example, statement (1) is *safe* since it is unlikely that the finally string would exceed 80 bytes. In statement (2), you will never be able to squeeze the output into a 5 byte long `char` array. In this case, the program halts at (2).
 
