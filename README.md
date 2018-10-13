@@ -74,11 +74,11 @@ printf("S length: %lu, capacity: %lu\n", S.length(), S.capacity());
 ## Speed test
 We have tested our library against libc `snprintf` and {fmt}. A string is produced from the following input:
 
-`"My %llu-yo brithday party will be held on %4u/%02u/%02u %02u:%02u:%02u.%03u"`
+`"My %llu-yo birthday party will be held on %4u/%02u/%02u %02u:%02u:%02u.%03u"`
 
 which produces the output
 
-`My 40-yo brithday party will be held on 2018/03/31 20:01:01.026`
+`My 40-yo birthday party will be held on 2018/03/31 20:01:01.026`
 
 The process is repeated 5,000,000 times with a simple for-loop compiled with g++ 4.9.2 with flag `-O1 -DNDEBUG` on Ubuntu 16.04 virtual machine equipped with a `i5-3470` CPU.
 
@@ -92,7 +92,7 @@ The process is repeated 5,000,000 times with a simple for-loop compiled with g++
 
 ✓ 100% Compatibility: creates std::string with your beloved printf formatting style
 
-✓ Protability and ease of use: just include header files and you are good to go
+✓ Portability and ease of use: just include header files and you are good to go
 
 ✓ Low dependence: depends only on `cstdarg`, `cstdio` & `string` which are included as standard in modern C++
 
