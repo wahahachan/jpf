@@ -18,5 +18,10 @@ int main() {
 
 	cout << BobsInfo << endl;
 
+	string LengthyString = jpf::jsnprintf(300, "Very compact %s", "memory usage!");
+
+	cout << "The length of the following string is " << LengthyString.length() << endl;
+	cout << LengthyString << endl;
+
 	return 0;
 }

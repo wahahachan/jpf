@@ -13,7 +13,17 @@ std::string jsnprintf(int n, const char *fmt, ...) {
 	std::string result(n, '\0');
 	int used = vsnprintf(const_cast<char *>(result.c_str()), n, fmt, arg);
 	va_end(arg);
-	result.erase(used).shrink_to_fit(); 
+	result.erase(used);
+#if __cplusplus >= 201103L || (defined(_MSC_VER) && _MSC_VER >= 1900)
+	result.shrink_to_fit();
+#else
+	if (n > used) {
+		try {
+			result.reserve(0);
+		}
+		catch (...) {}
+	}
+#endif
 	return result;
 }
 
