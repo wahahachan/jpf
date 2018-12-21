@@ -102,7 +102,7 @@ The process is repeated 5,000,000 times with a simple for-loop compiled with g++
 
 ☓ Custom type: you have to write your own ostream operator
 
-☓ Fail safe mechanism: we **do not** provides exception throw nor compile time argument checking nor string length auto-correction
+☓ Fail safe mechanism: we **do not** provide exception throw nor compile time argument checking nor string length auto-correction
 
 ## License
 The jpf library is distributed under the [MIT license](https://opensource.org/licenses/mit-license.php).
